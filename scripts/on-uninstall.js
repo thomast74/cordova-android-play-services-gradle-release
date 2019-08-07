@@ -51,7 +51,7 @@ function attempt(fn) {
 }
 
 module.exports = function (ctx) {
-    deferral = ctx.requireCordovaModule('q').defer();
+    deferral = require('q').defer();
     attempt(run)();
     return deferral.promise;
 };
